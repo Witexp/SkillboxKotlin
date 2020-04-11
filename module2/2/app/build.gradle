@@ -19,18 +19,19 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
-            manifestPlaceholders = [app_name: "HomeWork2_14"]
+            //manifestPlaceholders = [app_name: "HomeWork2_14"]
         }
         qa {
             initWith debug
             applicationIdSuffix ".test"
-            manifestPlaceholders = [app_name: "HomeWork2_14"]
+            //manifestPlaceholders = [app_name: "HomeWork2_14"]
         }
 
         release {
+                signingConfig signingConfigs.debug
                 minifyEnabled false
                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-                manifestPlaceholders = [app_name: "HomeWork2_14"]
+               // manifestPlaceholders = [app_name: "HomeWork2_14"]
             }
     }
         flavorDimensions "type"
